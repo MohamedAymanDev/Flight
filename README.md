@@ -1,122 +1,111 @@
-✈️ Flight Delay & Status Prediction System
-📌 Project Overview
+# ✈️ Flight Delay & Status Prediction System  
 
-This project aims to build a Machine Learning system for predicting flight status based on historical flight and operational data.
-The model analyzes temporal, operational, and route-based features to determine whether a flight will be delayed or on time.
+## 📌 Project Overview  
 
-The system evaluates multiple advanced ensemble and classical machine learning algorithms to select the most robust and generalizable model.
+This project focuses on building a Machine Learning classification system to predict flight status (Delayed vs On-Time) using historical flight operational data.
 
-📊 Dataset Description
+The system analyzes temporal, airline, and route-based features to determine whether a flight will experience delays. Multiple machine learning algorithms were implemented and compared to identify the most robust and generalizable model.
+
+---
+
+## 📊 Dataset Description  
 
 The dataset contains flight-level operational records including:
 
-Temporal Features:
+### 🔹 Temporal Features
+- Quarter  
+- Month  
+- Day of Month  
+- Day of Week  
+- Flight Date  
 
-Quarter
+### 🔹 Airline & Route Features
+- Airlines  
+- Origin City Name  
+- Destination City Name  
 
-Month
+### 🔹 Operational Metrics
+- Departure Delay (DepDelay)  
+- Arrival Delay (ArrDelay)  
+- Air Time  
+- Distance  
 
-Day of Month
+### 🎯 Target Variable
+- Flight_Status (Delayed / On-Time)
 
-Day of Week
+---
 
-Flight Date
+## 🤖 Models Implemented  
 
-Airline & Route Features:
+The following machine learning models were trained and evaluated:
 
-Airline
+- AdaBoost  
+- CatBoost  
+- XGBoost  
+- LightGBM  
+- Hist Gradient Boosting  
+- Gradient Boosting  
+- Random Forest  
+- Extra Trees  
+- Logistic Regression  
+- Naive Bayes  
+- Decision Tree  
 
-Origin City
+---
 
-Destination City
+## 📈 Model Performance Summary  
 
-Operational Metrics:
+- AdaBoost achieved the highest Test Accuracy (91.4%) with strong generalization.
+- Boosting models (CatBoost, XGBoost, LightGBM) delivered stable performance around 90% accuracy.
+- Random Forest and Extra Trees showed clear overfitting (≈99% training accuracy but lower test accuracy).
+- Decision Tree significantly overfitted the training data.
+- Balanced Accuracy confirms reasonable handling of class imbalance.
 
-Departure Delay (DepDelay)
+### ✅ Final Model Selection:
+AdaBoost was selected as the optimal model due to its superior balance between bias and variance.
 
-Arrival Delay (ArrDelay)
+---
 
-Air Time
+## 🛠️ Machine Learning Pipeline  
 
-Distance
+1. Data Cleaning & Preprocessing  
+2. Feature Engineering  
+3. Encoding Categorical Variables  
+4. Train/Test Split  
+5. Model Training  
+6. Performance Evaluation using:
+   - Accuracy
+   - Precision
+   - Recall
+   - F1-Score
+   - Balanced Accuracy  
+7. Model Comparison & Overfitting Analysis  
 
-Target Variable:
+---
 
-Flight_Status (Delayed / On-Time)
+## 🚀 Business Impact  
 
-🤖 Models Implemented
+- Enables airlines to predict potential delays in advance  
+- Improves operational planning and scheduling  
+- Enhances passenger satisfaction  
+- Reduces unexpected operational costs  
 
-The project compares multiple models:
+---
 
-AdaBoost
+## 💻 Technologies Used  
 
-CatBoost
+- Python  
+- Pandas  
+- NumPy  
+- Scikit-learn  
+- XGBoost  
+- LightGBM  
+- CatBoost  
+- Matplotlib / Seaborn  
 
-XGBoost
+---
 
-LightGBM
+## 📌 Conclusion  
 
-Hist Gradient Boosting
-
-Gradient Boosting
-
-Random Forest
-
-Extra Trees
-
-Logistic Regression
-
-Naive Bayes
-
-Decision Tree
-
-📈 Model Performance & Insights
-
-AdaBoost achieved the highest test accuracy (91.4%), showing strong generalization capability.
-
-Boosting models (CatBoost, XGBoost, LightGBM) showed stable performance around ~90% test accuracy.
-
-Random Forest and Extra Trees showed extreme overfitting (≈99% training accuracy but lower test accuracy).
-
-Decision Tree significantly overfitted the training data.
-
-Balanced Accuracy confirms the models handle class imbalance reasonably well.
-
-🔎 Conclusion:
-Ensemble boosting methods provide the best trade-off between bias and variance for this classification task.
-
-🛠️ Technical Workflow
-
-Data Cleaning & Preprocessing
-
-Feature Engineering
-
-Encoding Categorical Variables
-
-Train/Test Split
-
-Model Training
-
-Performance Evaluation using:
-
-Accuracy
-
-Precision
-
-Recall
-
-F1-Score
-
-Balanced Accuracy
-
-Model Comparison & Selection
-
-🚀 Business Impact
-
-Helps airlines predict delays in advance
-
-Improves operational planning
-
-Enhances passenger experience
-
-Reduces cost associated with unexpected delays
+Ensemble boosting algorithms demonstrated superior performance in predicting flight status.  
+The project highlights the importance of model comparison, overfitting detection, and balanced evaluation metrics in building reliable machine learning systems.
